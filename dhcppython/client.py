@@ -81,13 +81,14 @@ class DHCPClient(object):
     def __init__(
         self,
         interface: str = None,
+        listening_port: int = 67,
         send_from_port: int = 68,
         send_to_port: int = 67,
         max_retries: int = 10,
         socket_poll_interval: int = 10,
         retry_interval: int = 100,
     ):
-        self.listening_ports = [67]
+        self.listening_ports = [listening_port]
         self.send_from_port = send_from_port
         self.send_to_port = send_to_port
         self.max_pkt_size = 4096
